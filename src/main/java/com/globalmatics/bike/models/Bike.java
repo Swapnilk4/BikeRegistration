@@ -3,14 +3,31 @@ package com.globalmatics.bike.models;
 import java.math.BigDecimal;
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
+@Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Bike {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 	
 	private String name;
 	private String email;
 	private String phone;
 	private String model;
-	private String serialNumnber;
+	private String serialNumber;
 	private BigDecimal purchasePrice;
+	
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
 	private Date purchaseDate;
 	private boolean contact;
 
@@ -32,11 +49,11 @@ public class Bike {
 	public void setModel(String model) {
 		this.model = model;
 	}
-	public String getSerialNumnber() {
-		return serialNumnber;
+	public String getSerialNumber() {
+		return serialNumber;
 	}
-	public void setSerialNumnber(String serialNumnber) {
-		this.serialNumnber = serialNumnber;
+	public void setSerialNumber(String serialNumber) {
+		this.serialNumber = serialNumber;
 	}
 	public BigDecimal getPurchasePrice() {
 		return purchasePrice;
@@ -56,6 +73,18 @@ public class Bike {
 	public void setContact(boolean contact) {
 		this.contact = contact;
 	}
-	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 
+	
 }
