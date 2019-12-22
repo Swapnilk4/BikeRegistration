@@ -63,7 +63,7 @@ public class BikesController {
 	
 	
 	@GetMapping
-	@RequestMapping("/")
+	@RequestMapping("/version")
 	public Map GetVersion(){
 		
 		Map version = new HashMap<String,String>();
