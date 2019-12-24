@@ -38,20 +38,14 @@ public class BikesController {
 		
 		System.out.println("List"+ bikeRepository.findAll());
 		return bikeRepository.findAll();
-		//List<Bike> bikes = new ArrayList<>();
-		
-		//return bikes;
 	}
 	
 	@GetMapping("/{id}")
 	public Bike get(@PathVariable("id") long id) {
 		
-		
 		return bikeRepository.getOne(id);
-		
-		//return new Bike();
+
 	}
-	
 	
 	
 	@PostMapping

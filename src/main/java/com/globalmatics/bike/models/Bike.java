@@ -18,7 +18,7 @@ public class Bike {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Long id; 
 	
 	private String name;
 	private String email;
@@ -26,6 +26,8 @@ public class Bike {
 	private String model;
 	private String serialNumber;
 	private BigDecimal purchasePrice;
+	
+	
 	
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
 	private Date purchaseDate;
